@@ -30,7 +30,7 @@ int main() {
     cout << "Reversed a: " << a << "\n";
 
     // ------------------- C++ String -------------------------
-    string str = "hello";
+    string str = "hello"; //dynamic => runtime resize
 
     // Length
     cout << "\nLength (string): " << str.length() << "\n";
