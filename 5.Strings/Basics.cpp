@@ -7,13 +7,6 @@ int main() {
     string s1 = "Hello";
     string s2("World");
     string s3;
-
-    char str[100];
-
-    cout << "enter char array : ";
-    cin >> str;
-
-    cout << "output : " << str << endl;
     
 
     // Input
