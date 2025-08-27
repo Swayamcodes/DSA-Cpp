@@ -19,4 +19,23 @@ int main()  {
     isPrime(n);
     cout << isPrime(n) << endl;
     return 0;
-}
+} 
+
+//Seive of Eratosthenes to print all prime numbers up to n
+// class Solution { Leetcode 204
+// public:
+//     int countPrimes(int n) {
+//         vector<bool> isPrime(n + 1, true);
+//         int count = 0;
+//         for (int i = 2; i < n; i++) {
+//             if (isPrime[i]) {
+//                 count++;
+//             }
+//             for ( int j = i * 2; j < n; j = j + i) {
+//                 isPrime[j] = false;
+//             }
+//         }
+//         return count;
+//     }
+    
+// };
