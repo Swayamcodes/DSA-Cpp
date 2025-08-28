@@ -2,24 +2,24 @@
 #include <cmath>    // For mathematical functions like sqrt, pow, log
 using namespace std;
 
-string isPrime (int n) {
-    for ( int i = 2; i*i <=n ; i++) {
-        if ( n % i == 0) {
-            return "Not Prime";
-        } 
+// string isPrime (int n) {
+//     for ( int i = 2; i*i <=n ; i++) {
+//         if ( n % i == 0) {
+//             return "Not Prime";
+//         } 
 
-    }
-    return "Prime";
-}
+//     }
+//     return "Prime";
+// }
 
 
-int main()  {
-    int n = 42;
+// int main()  {
+//     int n = 42;
     
-    isPrime(n);
-    cout << isPrime(n) << endl;
-    return 0;
-} 
+//     isPrime(n);
+//     cout << isPrime(n) << endl;
+//     return 0;
+// } 
 
 //Seive of Eratosthenes to print all prime numbers up to n
 // class Solution { Leetcode 204
@@ -39,3 +39,23 @@ int main()  {
 //     }
     
 // };
+
+
+void printDigits(int n) {
+    int count = 0;
+    while (n != 0)
+    {
+        int digit = n % 10;
+        count++;
+        cout << digit << endl;
+        n = n / 10;
+    }
+    cout << count << endl;
+}
+
+int main () {
+    intn = 64732;
+
+    printDigits(n);
+    return 0;
+}
