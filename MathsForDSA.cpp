@@ -85,7 +85,8 @@ int gcd(int a, int b) {
 
 int main () {
     intn = 64732;
-
+    cout << gcd(48, 18) << endl;
+    cout << isArmstrong(153) << endl;
     printDigits(n);
     return 0;
 }
