@@ -8,7 +8,7 @@ void printNum(int n) {
         return;
     }
     cout<<n<<endl;
-    func(n-1); //recursive call
+    printNum(n-1); //recursive call
 }
 
 int fact(int n) {
@@ -21,7 +21,9 @@ int fact(int n) {
 int main() {
     printNum(5);
     //Recursion
-    cout << "Factorial of 5 is " << fact(5) << endl;a
+    cout << "Factorial of 5 is " << fact(5) << endl;
 
     return 0;
 }
+
+// g++ -std=c++14 42.Recursion.cpp && ./a.out
