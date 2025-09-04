@@ -18,10 +18,18 @@ int fact(int n) {
         return n * fact(n-1);
 }
 
+int Sum(int n) {
+    if ( n == 1 ) 
+        return 1;
+        
+        return n + Sum(n-1);
+}
+
 int main() {
     printNum(5);
     //Recursion
     cout << "Factorial of 5 is " << fact(5) << endl;
+    cout << "Sum of first 5 natural numbers is " << Sum(5) << endl;
 
     return 0;
 }
