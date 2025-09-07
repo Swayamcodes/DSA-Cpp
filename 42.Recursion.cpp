@@ -56,6 +56,20 @@ void printSubarrays(vector<int> &arr, vector<int> &ans, int i) {
    
 }
 
+// Subarrays of an array of size n = 2^n
+
+void printSubarrays2(vector<int> &arr, int n) {
+    for ( int i = 0; i < (1<<n); i++) {
+        for ( int j = 0; j < n; j++) {
+            if ( i & (1<<j)) {
+                cout << arr[j] << " ";
+            }
+        }
+        cout << endl;
+    }
+}
+
+
 int main() {
     printNum(5);
     //Recursion
