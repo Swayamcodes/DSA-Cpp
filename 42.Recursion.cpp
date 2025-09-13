@@ -116,6 +116,16 @@ void MergeSort(int arr[], int l, int r) {
     }
 }
 
+// Count Inversion with Merge Sort
+
+void countInversion() {
+    //TODO
+}
+//Changes in Merge function to count inversions
+
+
+
+
 
 
 int main() {
