@@ -7,10 +7,14 @@ class Person {
     string name;
     int age;
 
-    // Person(string name, int age) {
-    //     this-> name = name;
-    //     this-> age = age ;
-    // }
+    Person(string name, int age) {
+        this-> name = name;
+        this-> age = age ;
+    }
+
+    Person() {
+        cout << "Person Constructor called" << endl;
+    };
 };
 
 class Student : public Person { //inheritance
@@ -18,7 +22,12 @@ class Student : public Person { //inheritance
     int rollNo;
     string course;
 
-   
+    Student(string name, int age) : Person(name, age){ //calling base class constructor
+        cout << "Student Constructor called" << endl;
+    };
+
+   //First it will call Person's constructor then Student's constructor
+   //and destructor will be called in reverse order
 
     void getDetails() {
         cout << "Name: " << name << endl; //inherited from Person class
@@ -29,11 +38,8 @@ class Student : public Person { //inheritance
 };
 
 int main () {
-    Student s1;
-    s1.name = "Alice";
-    s1.age = 20;
-    s1.rollNo = 101;
-    s1.course = "Computer Science";
+    Student s1("Alice", 20);
+    
     s1.getDetails();
     return 0;
 }
