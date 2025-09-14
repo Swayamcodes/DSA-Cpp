@@ -29,6 +29,9 @@ class Teacher {
 
 class Student {
     public:
+    Teacher() { //constructor
+        cout << "Constructor called" << endl;
+    }
     string name;
     int rollNo;
     string dept;
@@ -39,12 +42,22 @@ class Student {
     }
 };
 
+class Account {
+    private:
+    double balance;
+    string password; //data hiding
+
+    public:
+    string accountID;
+    string accountHolderName;
+}
+
 int main () {
-    Teacher t1;
+    Teacher t1; //constructor called
     t1.name = "John Doe";
     t1.dept = "CSE";
     t1.subject = "Data Structures";
-    t1.setSalary(50000); // Set salary using setter method
+    t1.setSalary(50000); // Set salary using setter method 
   
     Teacher t2;
     Teacher t3;
