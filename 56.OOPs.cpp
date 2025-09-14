@@ -3,16 +3,39 @@
 using namespace std;
 
 class Teacher {
+    private:
+    double salary;
+     
     public:
     //properties/attributes
     string name;
     string dept;
     string subject;
-    double salary;
+    
 
     //methods/member functions
     void changeDept(string newDept) {
         dept = newDept;
+    }
+    //setter
+    void setSalary(double s) {
+        salary = s;
+    }
+    //getter
+    double getSalary() {
+        return salary;
+    }
+};
+
+class Student {
+    public:
+    string name;
+    int rollNo;
+    string dept;
+    int year;
+
+    void changeYear(int newYear) {
+        year = newYear;
     }
 };
 
@@ -21,7 +44,8 @@ int main () {
     t1.name = "John Doe";
     t1.dept = "CSE";
     t1.subject = "Data Structures";
-    t1.salary = 50000;
+    t1.setSalary(50000); // Set salary using setter method
+  
     Teacher t2;
     Teacher t3;
 
