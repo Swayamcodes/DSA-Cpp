@@ -13,6 +13,7 @@ class Circle : public Shape {
     }
 };
 
+
 //Static keyword is used to allocate memory only once during the lifetime of a class
 //Static members are shared by all objects of the class
 
