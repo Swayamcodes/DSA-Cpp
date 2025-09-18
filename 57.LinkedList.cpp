@@ -2,42 +2,65 @@
 using namespace std;
 
 class Node {
-    public :
+public:
     int data;
-    Node* next; //self-referential structure
+    Node* next;
 
     Node(int val) {
         data = val;
         next = NULL;
-    };
-
-
+    }
 };
 
 class List {
     Node* head;
     Node* tail;
 
-    List()
-    {
+public: // <-- Add this line
+    List() {
         head = NULL;
         tail = NULL;
     }
 
-    void push_front (int val) {
+    void push_front(int val) {
         Node* newNode = new Node(val);
-        if (head == NULL ) {
+        if (head == NULL) {
             head = newNode;
             tail = newNode;
         } else {
-            newNode->next = head; //link new node to previous head
+            newNode->next = head;
             head = newNode;
         }
     }
 
+    void push_back(int val) {
+        Node* newNode = new Node(val);
+        if (head == NULL) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail->next = newNode;
+            tail = newNode;
+        };
+    }
+
+    void printLL() {
+        Node* temp = head;
+        while (temp != NULL) {
+            cout << temp->data << "->";
+            temp = temp->next;
+        }
+        cout << "NULL" << endl;
+    }
 };
 
 int main() {
-    List ll;  
+    List ll;
+    ll.push_front(10);
+    ll.push_front(20);
+    ll.push_front(30);
+    ll.printLL();
     return 0;
-};
+}
+
+//g++ -std=c++14 57.LinkedList.cpp && ./a.exe
