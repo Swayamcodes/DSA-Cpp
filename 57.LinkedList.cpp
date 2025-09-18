@@ -44,6 +44,57 @@ public: // <-- Add this line
         };
     }
 
+    void pop_front() {
+        if (head == NULL) {
+            cout << "List is empty" << endl;
+            return;
+        }
+
+        Node*temp = head;
+        head = head->next;
+        temp->next = NULL;
+        delete temp;
+    }
+
+    void pop_back() {
+        if (head == NULL) {
+            cout << "List is empty" << endl;
+            return;
+        }
+
+        Node* temp = head;
+        while (temp->next != tail) {
+            temp = temp->next;
+        }
+        tail->next = NULL;
+        delete tail;
+        tail = temp;
+        
+    };
+
+    void insert(int val, int pos) {
+        if (pos < 0) {
+            cout << "Invalid position" << endl;
+            return;
+        }
+        if (pos == 0) {
+            push_front(val);
+            return;
+        }
+
+        Node* temp = head;
+        for (int i = 0; i < pos - 1; i++) {
+            if (temp == NULL) {
+                cout << "Position out of bounds" << endl;
+                return;
+            }
+            temp = temp->next;
+        }
+        Node* newNode = new Node(val);
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
+
     void printLL() {
         Node* temp = head;
         while (temp != NULL) {
@@ -52,6 +103,19 @@ public: // <-- Add this line
         }
         cout << "NULL" << endl;
     }
+
+    int search(int key) {
+        Node* temp = head;
+        int idx = 0;
+        while (temp != NULL) {
+            if (temp->data == key) {
+                return idx;
+            }
+            temp = temp->next;
+            idx++;
+        }
+        return -1; //not found
+    }
 };
 
 int main() {
@@ -59,7 +123,15 @@ int main() {
     ll.push_front(10);
     ll.push_front(20);
     ll.push_front(30);
+    // ll.push_back(5);
+
+    // ll.pop_front();
+    // ll.printLL();
+    // ll.pop_back();
+
+    ll.insert(15, 2);
     ll.printLL();
+    cout << ll.search(15) << endl;
     return 0;
 }
 
